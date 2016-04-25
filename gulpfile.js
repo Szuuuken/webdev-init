@@ -4,6 +4,8 @@ var sass        = require('gulp-sass');
 var jade        = require('gulp-jade');
 var reload      = browserSync.reload;
 var favicons    = require("gulp-favicons"), gutil = require("gutil");
+var sourcemaps   = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task("favicon", function () {
     return gulp.src("./app/img/brand.png").pipe(favicons({
@@ -66,7 +68,12 @@ gulp.task('jade-watch', ['templates'], reload);
  */
 gulp.task('sass', function () {
     return gulp.src(['./app/sass/*.sass'])
+        .pipe(sourcemaps.init())
         .pipe(sass())
+        .pipe(sourcemaps.write({includeContent: false}))
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(autoprefixer())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./dist/css'))
         .pipe(reload({stream: true}));
 });

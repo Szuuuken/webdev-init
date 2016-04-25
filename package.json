@@ -1,7 +1,7 @@
 {
-  "name": "instant-kleinrath",
+  "name": "webdev-init",
   "version": "0.0.1",
-  "description": "kleinrath.wien hp",
+  "description": "webdev-init",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp"
@@ -12,9 +12,11 @@
     "browser-sync": "*",
     "favicons": "^4.6.1",
     "gulp": "*",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-favicons": "^2.2.6",
     "gulp-jade": "*",
     "gulp-sass": "*",
-    "gutil": "^1.6.4"
+    "gutil": "^1.6.4",
+    "gulp-sourcemaps": "^1.6.0"
   }
 }
