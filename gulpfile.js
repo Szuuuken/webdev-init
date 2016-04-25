@@ -3,31 +3,8 @@ var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var jade        = require('gulp-jade');
 var reload      = browserSync.reload;
-var favicons    = require("gulp-favicons"), gutil = require("gutil");
 var sourcemaps   = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
-
-gulp.task("favicon", function () {
-    return gulp.src("./app/img/brand.png").pipe(favicons({
-      appName: "webdev-init",
-      appDescription: "webdev-init description",
-      developerName: "Daniel Szukitsch",
-      developerURL: "http://webdev-init",
-      background: "#020307",
-      path: "favicons/",
-      url: "http://webdev-init",
-      display: "standalone",
-      orientation: "portrait",
-      version: 1.0,
-      logging: false,
-      online: false,
-      html: "test.html",
-      pipeHTML: true,
-      replace: true
-    }))
-    .on("error", gutil.log)
-    .pipe(gulp.dest("./dist/favicons"));
-});
 
 gulp.task('js',function(){
     return gulp.src([
@@ -70,8 +47,6 @@ gulp.task('sass', function () {
     return gulp.src(['./app/sass/*.sass'])
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(sourcemaps.write({includeContent: false}))
-        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(autoprefixer())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('./dist/css'))
