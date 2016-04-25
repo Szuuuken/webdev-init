@@ -7,13 +7,13 @@ var favicons    = require("gulp-favicons"), gutil = require("gutil");
 
 gulp.task("favicon", function () {
     return gulp.src("./app/img/brand.png").pipe(favicons({
-      appName: "kleinrath.wien",
-      appDescription: "Foto, Grfik, Druck",
+      appName: "webdev-init",
+      appDescription: "webdev-init description",
       developerName: "Daniel Szukitsch",
-      developerURL: "http://kleinrath.wien",
+      developerURL: "http://webdev-init",
       background: "#020307",
       path: "favicons/",
-      url: "http://kleinrath.wien",
+      url: "http://webdev-init",
       display: "standalone",
       orientation: "portrait",
       version: 1.0,
@@ -65,7 +65,7 @@ gulp.task('jade-watch', ['templates'], reload);
  * Sass task for live injecting into all browsers
  */
 gulp.task('sass', function () {
-    return gulp.src('./app/sass/*.sass')
+    return gulp.src(['./app/sass/*.sass'])
         .pipe(sass())
         .pipe(gulp.dest('./dist/css'))
         .pipe(reload({stream: true}));
