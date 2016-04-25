@@ -1,0 +1,20 @@
+{
+  "name": "instant-kleinrath",
+  "version": "0.0.1",
+  "description": "kleinrath.wien hp",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "*",
+    "favicons": "^4.6.1",
+    "gulp": "*",
+    "gulp-favicons": "^2.2.6",
+    "gulp-jade": "*",
+    "gulp-sass": "*",
+    "gutil": "^1.6.4"
+  }
+}
